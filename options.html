@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>PhishGuard Options</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            padding: 16px;
+            background: #f9fafb;
+            color: #1f2937;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 120px;
+            margin: 8px 0;
+            padding: 8px;
+            font-family: monospace;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+        }
+
+        input,
+        button {
+            margin: 4px 0;
+            padding: 6px 10px;
+            border-radius: 6px;
+            border: 1px solid #d1d5db;
+        }
+
+        button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        button:hover {
+            background: #1e40af;
+        }
+
+        .section {
+            margin-bottom: 20px;
+            padding: 12px;
+            background: #fff;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+        }
+
+        #status {
+            margin-top: 10px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>PhishGuard Options</h2>
+
+    <div class="section">
+        <h3>Trusted Domains</h3>
+        <ul id="trustedList"></ul>
+        <input id="trustedInput" type="text" placeholder="example.com" />
+        <button id="addTrusted">Add</button>
+        <button id="clearTrusted">Clear All</button>
+    </div>
+
+    <div class="section">
+        <h3>Enabled Sites</h3>
+        <ul id="enabledList"></ul>
+        <input id="enabledInput" type="text" placeholder="example.com" />
+        <button id="addEnabled">Add</button>
+        <button id="clearEnabled">Clear All</button>
+    </div>
+
+    <div class="section">
+        <label>
+            <input type="checkbox" id="showInlineBadge" />
+            Show inline warning badge on pages
+        </label>
+    </div>
+
+    <div class="section">
+        <button id="saveBtn">💾 Save</button>
+        <button id="restoreBtn">↩️ Restore Defaults</button>
+        <div id="status"></div>
+    </div>
+
+    <div class="section">
+        <h3>Export / Import Settings</h3>
+        <textarea id="jsonBox" placeholder="Exported JSON will appear here"></textarea><br>
+        <button id="exportBtn">Export</button>
+        <button id="importBtn">Import</button>
+    </div>
+
+    <script src="options.js"></script>
+</body>
+
+</html>
